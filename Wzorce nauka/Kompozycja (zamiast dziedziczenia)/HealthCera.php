@@ -1,10 +1,24 @@
 <?php
 
-abstract class HealthCara
+class HealthCare
 {
-    public const MAX_AUTHORITY = 10;
-    protected int $maxGrant = 1200;
+    private int $maxGrant = 1200;
 
-    abstract public function calculateGrant(): float;
+    private JobLevel $jobLevel;
+
+    public function __construct(JobLevel $jobLevel)
+    {
+        $this->jobLevel = $jobLevel;
+    }
+
+    public function setJobLevel(JobLevel $jobLevel): void
+    {
+        $this->jobLevel = $jobLevel;
+    }
+
+    public function calculateGrant(): float
+    {
+        return $this->jobLevel->getAuthorityFactory() * $this->maxGrant;
+    }
 
 }

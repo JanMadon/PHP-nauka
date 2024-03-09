@@ -1,17 +1,11 @@
 <?php
 
-class SeniorHealthCare extends HealthCara
+class Senior implements  JobLevel
 {
-
     private const AUTHORITY = 7;
-
-    public function calculateGrant(): float
-    {
-        return $this->getAuthorityFactory() * $this->maxGrant;
-    }
 
     public function getAuthorityFactory(): float
     {
-        return self::AUTHORITY / HealthCara::MAX_AUTHORITY;
+        return self::AUTHORITY / self::MAX_AUTHORITY;
     }
 }
