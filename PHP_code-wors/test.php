@@ -1,6 +1,15 @@
 <?php
 
-$str = ' jakiś string ';
-//$str = trim($str);
+use function PHPSTORM_META\type;
 
-var_dump( $str );
+$var = 0;
+
+// var_dump( gettype($var) );
+
+// // if(gettype($var) === "bollen" && $var == false) {
+// //     echo 'test';
+// // }
+// if($var == false) {
+//     echo 'test';
+// }
+
