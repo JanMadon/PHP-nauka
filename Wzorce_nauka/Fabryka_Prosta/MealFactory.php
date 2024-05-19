@@ -1,13 +1,15 @@
 <?php
  
 declare(strict_types=1);
+
+namespace app\Wzorce_nauka\Fabryka_Prosta;
  
 final class MealFactory
 {
     public function create(MealType $mealType): MealInterface
     {
         return match ($mealType) {
-            MealType::VEGETARIAN => new VegetarianMeal(),
+            MealType::VEGETARIAN => new VegatarianMeal(),
             MealType::VEGAN => new VeganMeal()
         };
     }
